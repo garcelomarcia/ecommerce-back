@@ -1,6 +1,4 @@
 const { Cart, Shirt_Customize, Shirt_Model, User } = require("../models");
-const react = require("@heroicons/react");
-const { RequestQuote } = require("@mui/icons-material");
 
 exports.addToCart = (req, res) => {
   const { quantity, url, data } = req.body;
