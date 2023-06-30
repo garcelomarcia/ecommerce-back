@@ -25,4 +25,6 @@ async function runSeed() {
   await Shirt_Model.bulkCreate(fakeData);
 }
 
-runSeed();
+runSeed().catch((error) => {
+  console.error("An error occurred during seed execution:", error);
+});
