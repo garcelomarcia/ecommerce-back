@@ -8,7 +8,14 @@ const db = require("./db");
 const routes = require("./routes");
 const models = require("./models");
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(
+  cors({
+    origin: ["https://localhost:3000"], // Replace with your front-end URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
