@@ -45,10 +45,7 @@ exports.loginUser = async (req, res) => {
 
     const token = generateToken(payload);
 
-    res.cookie("token", token);
-
-    res.send(payload);
-    console.log(payload);
+    res.send(token);
   } catch (err) {
     console.log("error desde loginUser", err);
   }
