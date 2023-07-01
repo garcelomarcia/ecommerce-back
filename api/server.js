@@ -10,7 +10,7 @@ const models = require("./models");
 
 app.use(
   cors({
-    origin: ["http://187.162.118.101:3000"], // Replace with your front-end URL
+    origin: ["http://localhost:3000"], // Replace with your front-end URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
