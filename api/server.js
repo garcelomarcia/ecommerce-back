@@ -10,7 +10,10 @@ const models = require("./models");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"], // Replace with your front-end URL
+    origin: [
+      "http://localhost:3000",
+      "https://ecommerce-garcelomarcia.vercel.app",
+    ], // Replace with your front-end URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
