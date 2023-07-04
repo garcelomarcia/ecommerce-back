@@ -1,7 +1,7 @@
 const { validateToken } = require("../config/tokens");
 
 function validateAuth(req, res, next) {
-  console.log(req.headers);
+  console.log(req.headers.authorization);
   const token =
     req.headers.authorization && req.headers.authorization.split(" ")[1];
 
