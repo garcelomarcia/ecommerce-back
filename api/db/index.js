@@ -1,19 +1,17 @@
 const { Sequelize } = require("sequelize");
+const dotenv = require("dotenv");
 
-// Create a new Sequelize instance
-const sequelize = new Sequelize(
-  process.env.DATABASE_URL ||
-    "postgresql://myuser:mypassword@187.162.118.101:5432/ecommerce",
-  {
-    dialect: "postgres",
-    logging: false,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // This line allows you to connect to a database with a self-signed certificate
-      },
-    },
-  }
-);
+dotenv.config();
 
-module.exports = sequelize;
+const dbName = process.env.DB_NAME;
+const dbUser = process.env.DB_USER;
+const dbHost = process.env.DB_HOST;
+const dbPassword = process.env.DB_PASSWORD;
+
+const db = new Sequelize(dbName, dbUser, dbPassword, {
+  host: dbHost,
+  dialect: "postgres",
+  logging: false,
+});
+
+module.exports = db;
